@@ -54,26 +54,18 @@ class m230209_152128_tabela_vendas extends Migration
     public function safeDown()
     {
 
-        /*$this->dropForeignKey(
-            'fk-post-author_id',
-            'post'
-        );*/
+        $this->dropForeignKey(
+            'fk-post-id_produto',
+            'vendas'
+        );
+
+        $this->dropForeignKey(
+            'fk-post-id_cliente',
+            'vendas'
+        );
+
         $this->dropTable('vendas');
 
     }
-
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m230209_152128_tabela_vendas cannot be reverted.\n";
-
-        return false;
-    }
-    */
+    
 }
