@@ -31,13 +31,9 @@ class m230209_151336_tabela_produtos extends Migration
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function Down()
     {
-
-        /*$this->dropForeignKey(
-            'fk-produtos-author_id',
-            'post'
-        );*/
+        
         $this->dropTable('produtos');
 
     }

@@ -28,11 +28,7 @@ class m230207_134348_tabela_cliente extends Migration
      */
     public function safeDown()
     {
-
-        /*$this->dropForeignKey(
-            'fk-post-author_id',
-            'post'
-        );*/
+        
         $this->dropTable('cliente');
 
     }

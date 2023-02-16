@@ -24,45 +24,13 @@ class m230209_152128_tabela_vendas extends Migration
 
         ]);
 
-        $this->addForeignKey(
-
-            'Fk-vendas-id_cliente',
-            'vendas',
-            'id_cliente',
-            'cliente',
-            'id',
-            'RESTRICT'
-
-        );
-
-        $this->addForeignKey(
-
-            'Fk-vendas-id_produto',
-            'vendas',
-            'id_produto',
-            'produtos',
-            'id',
-            'RESTRICT'
-
-        );
-
     }
 
     /**
      * {@inheritdoc}
      */
-    public function safeDown()
+    public function Down()
     {
-
-        $this->dropForeignKey(
-            'fk-post-id_produto',
-            'vendas'
-        );
-
-        $this->dropForeignKey(
-            'fk-post-id_cliente',
-            'vendas'
-        );
 
         $this->dropTable('vendas');
 
