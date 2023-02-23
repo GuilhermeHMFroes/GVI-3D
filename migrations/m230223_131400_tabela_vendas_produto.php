@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m230216_174024_tabela_vendas_produto
+ * Class m230223_131400_tabela_vendas_produto
  */
-class m230216_174024_tabela_vendas_produto extends Migration
+class m230223_131400_tabela_vendas_produto extends Migration
 {
     /**
      * {@inheritdoc}
@@ -50,7 +50,7 @@ class m230216_174024_tabela_vendas_produto extends Migration
     /**
      * {@inheritdoc}
      */
-    public function Down()
+    public function safeDown()
     {
 
         $this->dropForeignKey(
@@ -67,18 +67,4 @@ class m230216_174024_tabela_vendas_produto extends Migration
         
     }
 
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m230216_174024_tabela_vendas_produto cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }

@@ -40,12 +40,13 @@ class m230209_152128_tabela_vendas extends Migration
     /**
      * {@inheritdoc}
      */
-    public function Down()
+    public function safeDown()
     {
 
         $this->dropForeignKey(
             'fk-post-id_cliente',
             'vendas'
+            
         );
 
         $this->dropTable('vendas');
