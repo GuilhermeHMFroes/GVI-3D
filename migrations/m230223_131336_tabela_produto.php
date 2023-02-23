@@ -3,7 +3,7 @@
 use yii\db\Migration;
 
 /**
- * Class m230209_151336_tabela_produtos
+ * Class m230223_131336_tabela_produto
  */
 class m230223_131336_tabela_produto extends Migration
 {
@@ -54,18 +54,4 @@ class m230223_131336_tabela_produto extends Migration
 
     }
 
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m230209_151336_tabela_produtos cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }

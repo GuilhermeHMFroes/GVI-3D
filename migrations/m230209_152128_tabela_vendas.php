@@ -46,6 +46,7 @@ class m230209_152128_tabela_vendas extends Migration
         $this->dropForeignKey(
             'fk-post-id_cliente',
             'vendas'
+            
         );
 
         $this->dropTable('vendas');

@@ -30,18 +30,4 @@ class m230216_151210_tabela_material extends Migration
         $this->dropTable('material');
     }
 
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m230216_151210_tabela_material cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }
