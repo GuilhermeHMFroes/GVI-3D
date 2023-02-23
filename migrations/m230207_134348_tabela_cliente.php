@@ -26,7 +26,7 @@ class m230207_134348_tabela_cliente extends Migration
     /**
      * {@inheritdoc}
      */
-    public function Down()
+    public function safeDown()
     {
 
         $this->dropTable('cliente');

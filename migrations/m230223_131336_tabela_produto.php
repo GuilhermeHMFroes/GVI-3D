@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Class m230209_151336_tabela_produtos
  */
-class m230209_151336_tabela_produto extends Migration
+class m230223_131336_tabela_produto extends Migration
 {
     /**
      * {@inheritdoc}
@@ -42,7 +42,7 @@ class m230209_151336_tabela_produto extends Migration
     /**
      * {@inheritdoc}
      */
-    public function Down()
+    public function safeDown()
     {
         
         $this->dropForeignKey(
