@@ -52,19 +52,17 @@ class m230223_131400_tabela_vendas_produto extends Migration
      */
     public function safeDown()
     {
-
         $this->dropForeignKey(
-            'fk-post-id_vendas',
+            'Fk-vendas_produto-id_vendas',
             'vendas_produto'
         );
 
         $this->dropForeignKey(
-            'fk-post-id_produto',
+            'Fk-vendas_produto-id_produto',
             'vendas_produto'
         );
 
         $this->dropTable('vendas_produto');
-        
     }
 
 }

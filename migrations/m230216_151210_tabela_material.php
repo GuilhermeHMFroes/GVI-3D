@@ -27,7 +27,9 @@ class m230216_151210_tabela_material extends Migration
      */
     public function safeDown()
     {
+
         $this->dropTable('material');
+        
     }
 
 }
