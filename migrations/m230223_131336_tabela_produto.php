@@ -44,14 +44,12 @@ class m230223_131336_tabela_produto extends Migration
      */
     public function safeDown()
     {
-        
         $this->dropForeignKey(
-            'fk-post-idMaterial',
+            'Fk-produto-id_material',
             'produto'
         );
 
         $this->dropTable('produto');
-
     }
 
 }
