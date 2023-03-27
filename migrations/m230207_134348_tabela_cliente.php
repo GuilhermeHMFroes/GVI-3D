@@ -23,6 +23,8 @@ class m230207_134348_tabela_cliente extends Migration
 
     }
 
+    $this->alterColumn('cliente', 'id', 'AUTO_INCREMENT');
+
     /**
      * {@inheritdoc}
      */
