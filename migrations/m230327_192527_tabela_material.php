@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m230216_151210_tabela_material
+ * Class m230327_192527_tabela_material
  */
-class m230216_151210_tabela_material extends Migration
+class m230327_192527_tabela_material extends Migration
 {
     /**
      * {@inheritdoc}
@@ -33,5 +33,4 @@ class m230216_151210_tabela_material extends Migration
         $this->dropTable('material');
         
     }
-
 }

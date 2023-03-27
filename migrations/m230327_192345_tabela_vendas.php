@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m230209_152128_tabela_vendas
+ * Class m230327_192345_tabela_vendas
  */
-class m230209_152128_tabela_vendas extends Migration
+class m230327_192345_tabela_vendas extends Migration
 {
     /**
      * {@inheritdoc}
@@ -20,7 +20,7 @@ class m230209_152128_tabela_vendas extends Migration
             'descricao' => $this->text()->notNull(),
             'pagamento' => $this->string()->notNull(),
 
-            'id_cliente' =>  $this->integer()->notNull(),
+            'id_usuario' =>  $this->integer()->notNull(),
 
         ]);
 
@@ -28,10 +28,10 @@ class m230209_152128_tabela_vendas extends Migration
 
         $this->addForeignKey(
 
-            'Fk-vendas-id_cliente', //nome da chave estrangeira
+            'Fk-vendas-id_usuario', //nome da chave estrangeira
             'vendas', //qual tabela possui a chave estrangeira
-            'id_cliente', //qual campo é a chave estrangeira
-            'cliente', //tabela que é referenciada
+            'id_usuario', //qual campo é a chave estrangeira
+            'usuario', //tabela que é referenciada
             'id', //campo que é referenciado
             'RESTRICT' //tipo de implicação no update e no delete
 
@@ -53,5 +53,4 @@ class m230209_152128_tabela_vendas extends Migration
         $this->dropTable('vendas');
 
     }
-    
 }
