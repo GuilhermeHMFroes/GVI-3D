@@ -21,6 +21,7 @@ class m230223_131336_tabela_produto extends Migration
             'peso' => $this->float()->notNull(),
             'descricao' => $this->text()->notNull(),
             'valor' => $this->float()->notNull(),
+            'imagem' => $this->string(),
 
             'id_material' => $this->integer()->notNull(),
 
@@ -48,6 +49,8 @@ class m230223_131336_tabela_produto extends Migration
             'Fk-produto-id_material',
             'produto'
         );
+
+        $this->dropColumn('produto', 'imagem');
 
         $this->dropTable('produto');
     }
