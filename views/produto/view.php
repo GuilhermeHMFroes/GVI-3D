@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'peso',
             'descricao:ntext',
             'valor',
+            'imagem',
             'id_material',
         ],
     ]) ?>

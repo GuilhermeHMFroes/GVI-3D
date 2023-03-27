@@ -22,6 +22,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'valor')->textInput() ?>
 
+    <?= $form->field($model, 'imagem')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'id_material')->textInput() ?>
 
     <div class="form-group">

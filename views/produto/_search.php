@@ -27,6 +27,8 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'valor') ?>
 
+    <?php // echo $form->field($model, 'imagem') ?>
+
     <?php // echo $form->field($model, 'id_material') ?>
 
     <div class="form-group">
