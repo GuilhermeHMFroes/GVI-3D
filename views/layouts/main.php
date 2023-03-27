@@ -41,6 +41,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Produtos', 'url' => ['/produto/index']],
             ['label' => 'Contato', 'url' => ['/site/contact']],
             ['label' => 'Sobre nós', 'url' => ['/site/about']],
             Yii::$app->user->isGuest
