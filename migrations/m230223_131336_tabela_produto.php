@@ -21,7 +21,7 @@ class m230223_131336_tabela_produto extends Migration
             'peso' => $this->float()->notNull(),
             'descricao' => $this->text()->notNull(),
             'valor' => $this->float()->notNull(),
-            'imagem' => $this->string(),
+            'imagem' => $this->string()->notNull(),
 
             'id_material' => $this->integer()->notNull(),
 
