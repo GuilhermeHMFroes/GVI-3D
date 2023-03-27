@@ -3,24 +3,25 @@
 use yii\db\Migration;
 
 /**
- * Class m230207_134348_tabela_cliente
+ * Class m230327_192252_tabela_usuario
  */
-class m230207_134348_tabela_cliente extends Migration
+class m230327_192252_tabela_usuario extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('cliente', [
+        $this->createTable('usuario', [
             'id' => $this->primaryKey(),
             'nome' => $this->string()->notNull(),
             'endereco' => $this->text()->notNull(),
             'email' => $this->string(),
+            'senha' => $this->string(),
             'telefone' => $this->string()->notNull(),
         ]);
 
-        $this->alterColumn('cliente', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));
+        $this->alterColumn('usuario', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));
 
     }
 
@@ -31,5 +32,4 @@ class m230207_134348_tabela_cliente extends Migration
     {
         $this->dropTable('cliente');
     }
-
 }

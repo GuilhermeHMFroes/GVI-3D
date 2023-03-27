@@ -7,7 +7,7 @@
 use yii\helpers\Html;
 
 $this->title = 'GVI-3D';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 
 ?>
 

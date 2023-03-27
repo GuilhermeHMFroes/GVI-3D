@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m230223_131400_tabela_vendas_produto
+ * Class m230327_192550_tabela_vendas_produto
  */
-class m230223_131400_tabela_vendas_produto extends Migration
+class m230327_192550_tabela_vendas_produto extends Migration
 {
     /**
      * {@inheritdoc}
@@ -67,5 +67,4 @@ class m230223_131400_tabela_vendas_produto extends Migration
 
         $this->dropTable('vendas_produto');
     }
-
 }
