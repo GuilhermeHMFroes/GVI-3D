@@ -13,6 +13,7 @@ use Yii;
  * @property float $peso
  * @property string $descricao
  * @property float $valor
+ * @property string|null $imagem
  * @property int $id_material
  *
  * @property Material $material
@@ -37,7 +38,7 @@ class Produto extends \yii\db\ActiveRecord
             [['tamanho', 'peso', 'valor'], 'number'],
             [['descricao'], 'string'],
             [['id_material'], 'integer'],
-            [['nome'], 'string', 'max' => 255],
+            [['nome', 'imagem'], 'string', 'max' => 255],
             [['id_material'], 'exist', 'skipOnError' => true, 'targetClass' => Material::class, 'targetAttribute' => ['id_material' => 'id']],
         ];
     }
@@ -54,6 +55,7 @@ class Produto extends \yii\db\ActiveRecord
             'peso' => 'Peso',
             'descricao' => 'Descricao',
             'valor' => 'Valor',
+            'imagem' => 'Imagem',
             'id_material' => 'Id Material',
         ];
     }
