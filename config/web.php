@@ -42,14 +42,17 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
-        'urlManager' => [
+        
+        /*'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                ''=> 'site/index.php', // define site/index como página inicial padrão
+                '<controller:/controllers/ProdutoController.php' => '<controller>/<action>',
             ],
-        ],
-        */
+            'defaultRoute' => 'site/index', // define site/index como página inicial padrão
+        ],*/
+        
     ],
     'params' => $params,
 ];
