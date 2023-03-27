@@ -38,6 +38,8 @@ class m230223_131336_tabela_produto extends Migration
 
         );
 
+        $this->alterColumn('produto', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));
+
     }
 
     /**
@@ -50,7 +52,9 @@ class m230223_131336_tabela_produto extends Migration
             'produto'
         );
 
-        $this->dropColumn('produto', 'imagem');
+        if ($this->db->schema->getTableSchema('produto')->getColumn('imagem')) {
+            $this->dropColumn('produto', 'imagem');
+        }
 
         $this->dropTable('produto');
     }

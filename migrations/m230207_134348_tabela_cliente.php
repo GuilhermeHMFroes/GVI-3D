@@ -12,7 +12,6 @@ class m230207_134348_tabela_cliente extends Migration
      */
     public function safeUp()
     {
-
         $this->createTable('cliente', [
             'id' => $this->primaryKey(),
             'nome' => $this->string()->notNull(),
@@ -21,18 +20,16 @@ class m230207_134348_tabela_cliente extends Migration
             'telefone' => $this->string()->notNull(),
         ]);
 
-    }
+        $this->alterColumn('cliente', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));
 
-    $this->alterColumn('cliente', 'id', 'AUTO_INCREMENT');
+    }
 
     /**
      * {@inheritdoc}
      */
     public function safeDown()
     {
-
         $this->dropTable('cliente');
-
     }
 
 }

@@ -15,6 +15,7 @@ class m230223_131400_tabela_vendas_produto extends Migration
 
         $this->createTable('vendas_produto', [
 
+            'id' => $this->primaryKey(),
             'valor' => $this->float()->notNull(),
             'quantidade' => $this->integer()->notNull(),
             
@@ -44,6 +45,8 @@ class m230223_131400_tabela_vendas_produto extends Migration
             'RESTRICT' //tipo de implicação no update e no delete
 
         );
+
+        $this->alterColumn('vendas_produto', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));
 
     }
 

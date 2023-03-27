@@ -24,6 +24,8 @@ class m230209_152128_tabela_vendas extends Migration
 
         ]);
 
+        $this->alterColumn('vendas', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));
+
         $this->addForeignKey(
 
             'Fk-vendas-id_cliente', //nome da chave estrangeira

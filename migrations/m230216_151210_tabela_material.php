@@ -20,6 +20,8 @@ class m230216_151210_tabela_material extends Migration
             'especificacoes' => $this->text()->notNull(),
         ]);
 
+        $this->alterColumn('material', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));
+
     }
 
     /**
