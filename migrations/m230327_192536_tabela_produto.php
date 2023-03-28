@@ -22,6 +22,9 @@ class m230327_192536_tabela_produto extends Migration
             'descricao' => $this->text()->notNull(),
             'valor' => $this->float()->notNull(),
             'imagem' => $this->string()->notNull(),
+            'linkShopee' => $this->string()->notNull(),
+            'linkAmazon' => $this->string()->notNull(),
+            'linkMercadoLivre' => $this->string()->notNull(),
 
             'id_material' => $this->integer()->notNull(),
 

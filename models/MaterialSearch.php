@@ -18,7 +18,7 @@ class MaterialSearch extends Material
     {
         return [
             [['id'], 'integer'],
-            [['tipo', 'especificacoes'], 'safe'],
+            [['tipo', 'especificacoes', 'descricao', 'imagem'], 'safe'],
             [['valor'], 'number'],
         ];
     }
@@ -64,7 +64,9 @@ class MaterialSearch extends Material
         ]);
 
         $query->andFilterWhere(['like', 'tipo', $this->tipo])
-            ->andFilterWhere(['like', 'especificacoes', $this->especificacoes]);
+            ->andFilterWhere(['like', 'especificacoes', $this->especificacoes])
+            ->andFilterWhere(['like', 'descricao', $this->descricao])
+            ->andFilterWhere(['like', 'imagem', $this->imagem]);
 
         return $dataProvider;
     }

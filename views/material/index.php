@@ -33,6 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'tipo',
             'valor',
             'especificacoes:ntext',
+            'descricao:ntext',
+            //'imagem',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Material $model, $key, $index, $column) {

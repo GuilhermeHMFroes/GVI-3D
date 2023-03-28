@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
-/** @var app\models\ProdutoSearch $model */
+/** @var app\models\UsuarioSearch $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="produto-search">
+<div class="usuario-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,23 +19,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome') ?>
 
-    <?= $form->field($model, 'tamanho') ?>
+    <?= $form->field($model, 'endereco') ?>
 
-    <?= $form->field($model, 'peso') ?>
+    <?= $form->field($model, 'email') ?>
 
-    <?= $form->field($model, 'descricao') ?>
+    <?= $form->field($model, 'senha') ?>
 
-    <?php // echo $form->field($model, 'valor') ?>
-
-    <?php // echo $form->field($model, 'imagem') ?>
-
-    <?php // echo $form->field($model, 'linkShopee') ?>
-
-    <?php // echo $form->field($model, 'linkAmazon') ?>
-
-    <?php // echo $form->field($model, 'linkMercadoLivre') ?>
-
-    <?php // echo $form->field($model, 'id_material') ?>
+    <?php // echo $form->field($model, 'telefone') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

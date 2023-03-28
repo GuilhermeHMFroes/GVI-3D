@@ -8,8 +8,8 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
 use app\models\Produto;
+use yii\web\NotFoundHttpException;
 
 class SiteController extends Controller
 {
@@ -60,9 +60,18 @@ class SiteController extends Controller
      *
      * @return string
      */
+
+     public function getMaterial()
+     {
+        return $this->hasOne(Material::class, ['id' => 'id_material']);
+     }
+
     public function actionIndex()
     {
-        $produtos = Produto::find()->all();
+        $produtos = Produto::find()
+            ->joinWith('material')
+            ->select(['produto.*', 'material.tipo'])
+            ->all();
 
         return $this->render('index', [
             'produtos' => $produtos,
@@ -108,18 +117,50 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
 
-            return $this->refresh();
+    public function actionOrcamento()
+    {
+    
+        return $this->render('orcamento');
+    
+    }
+
+    public function actionMateriais()
+    {
+    
+        $materiais = \app\models\Material::find()->all();
+
+        return $this->render('materiais', [
+            'materiais' => $materiais,
+        ]);
+    
+    }
+
+    /*public function beforeAction($action)
+    {
+        if ($action->id === 'produto' && !Produto::findOne(Yii::$app->request->getQueryParam('id'))) {
+            throw new NotFoundHttpException('O produto solicitado não foi encontrado.');
         }
-        return $this->render('contact', [
+
+        return parent::beforeAction($action);
+    }*/
+
+    public function actionProduto($id)
+    {
+        
+        // Encontra o modelo do produto pelo ID
+        $model = Produto::findOne($id);
+
+        if (!$model) {
+            return $this->render('index');
+        }
+    
+        return $this->render('produto', [
             'model' => $model,
         ]);
+
     }
+
 
     /**
      * Displays about page.

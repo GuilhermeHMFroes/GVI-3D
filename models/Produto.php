@@ -14,6 +14,9 @@ use Yii;
  * @property string $descricao
  * @property float $valor
  * @property string $imagem
+ * @property string $linkShopee
+ * @property string $linkAmazon
+ * @property string $linkMercadoLivre
  * @property int $id_material
  *
  * @property Material $material
@@ -34,11 +37,11 @@ class Produto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'tamanho', 'peso', 'descricao', 'valor', 'imagem', 'id_material'], 'required'],
+            [['nome', 'tamanho', 'peso', 'descricao', 'valor', 'imagem', 'linkShopee', 'linkAmazon', 'linkMercadoLivre', 'id_material'], 'required'],
             [['tamanho', 'peso', 'valor'], 'number'],
             [['descricao'], 'string'],
             [['id_material'], 'integer'],
-            [['nome', 'imagem'], 'string', 'max' => 255],
+            [['nome', 'imagem', 'linkShopee', 'linkAmazon', 'linkMercadoLivre'], 'string', 'max' => 255],
             [['id_material'], 'exist', 'skipOnError' => true, 'targetClass' => Material::class, 'targetAttribute' => ['id_material' => 'id']],
         ];
     }
@@ -56,6 +59,9 @@ class Produto extends \yii\db\ActiveRecord
             'descricao' => 'Descricao',
             'valor' => 'Valor',
             'imagem' => 'Imagem',
+            'linkShopee' => 'Link Shopee',
+            'linkAmazon' => 'Link Amazon',
+            'linkMercadoLivre' => 'Link Mercado Livre',
             'id_material' => 'Id Material',
         ];
     }

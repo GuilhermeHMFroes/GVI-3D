@@ -16,8 +16,8 @@ class m230327_192252_tabela_usuario extends Migration
             'id' => $this->primaryKey(),
             'nome' => $this->string()->notNull(),
             'endereco' => $this->text()->notNull(),
-            'email' => $this->string(),
-            'senha' => $this->string(),
+            'email' => $this->string()->unique(),
+            'senha' => $this->string()->notNull(),
             'telefone' => $this->string()->notNull(),
         ]);
 

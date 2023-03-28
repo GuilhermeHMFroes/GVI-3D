@@ -18,6 +18,8 @@ class m230327_192527_tabela_material extends Migration
             'tipo' => $this->string()->notNull(),
             'valor' => $this->float()->notNull(),
             'especificacoes' => $this->text()->notNull(),
+            'descricao' => $this->text()->notNull(),
+            'imagem' => $this->string()->notNull(),
         ]);
 
         $this->alterColumn('material', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));

@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Produto;
+use app\models\Usuario;
 
 /**
- * ProdutoSearch represents the model behind the search form of `app\models\Produto`.
+ * UsuarioSearch represents the model behind the search form of `app\models\Usuario`.
  */
-class ProdutoSearch extends Produto
+class UsuarioSearch extends Usuario
 {
     /**
      * {@inheritdoc}
@@ -17,9 +17,8 @@ class ProdutoSearch extends Produto
     public function rules()
     {
         return [
-            [['id', 'id_material'], 'integer'],
-            [['nome', 'descricao', 'imagem', 'linkShopee', 'linkAmazon', 'linkMercadoLivre'], 'safe'],
-            [['tamanho', 'peso', 'valor'], 'number'],
+            [['id'], 'integer'],
+            [['nome', 'endereco', 'email', 'senha', 'telefone'], 'safe'],
         ];
     }
 
@@ -41,7 +40,7 @@ class ProdutoSearch extends Produto
      */
     public function search($params)
     {
-        $query = Produto::find();
+        $query = Usuario::find();
 
         // add conditions that should always apply here
 
@@ -60,18 +59,13 @@ class ProdutoSearch extends Produto
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'tamanho' => $this->tamanho,
-            'peso' => $this->peso,
-            'valor' => $this->valor,
-            'id_material' => $this->id_material,
         ]);
 
         $query->andFilterWhere(['like', 'nome', $this->nome])
-            ->andFilterWhere(['like', 'descricao', $this->descricao])
-            ->andFilterWhere(['like', 'imagem', $this->imagem])
-            ->andFilterWhere(['like', 'linkShopee', $this->linkShopee])
-            ->andFilterWhere(['like', 'linkAmazon', $this->linkAmazon])
-            ->andFilterWhere(['like', 'linkMercadoLivre', $this->linkMercadoLivre]);
+            ->andFilterWhere(['like', 'endereco', $this->endereco])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'senha', $this->senha])
+            ->andFilterWhere(['like', 'telefone', $this->telefone]);
 
         return $dataProvider;
     }

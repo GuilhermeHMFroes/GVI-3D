@@ -26,6 +26,23 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <link rel="shortcut icon" href="<?= Yii::$app->request->baseUrl ?>/web/logo/logo.ico" type="image/x-icon">
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
+    <style>
+
+        .separador {
+            border-top: 1px solid #ced4da;
+        }
+
+        p{
+            text-align: justify;
+        }
+
+        h2, h4{
+            text-align: center;
+        }
+
+    </style>
+
 </head>
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
@@ -33,7 +50,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <header id="header">
     <?php
     NavBar::begin([
-        'brandLabel' => 'GVI 3D',
+
+        'brandLabel' => '<img style="height: 30px;" src="' . Yii::$app->request->baseUrl . '/logo/logo.ico" class="d-inline-block align-top" alt="Logo"> GVI 3D',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
     ]);
@@ -41,9 +59,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Produtos', 'url' => ['/produto/index']],
-            ['label' => 'Contato', 'url' => ['/site/contact']],
+            ['label' => 'Orçamento', 'url' => ['/site/orcamento']],
             ['label' => 'Sobre nós', 'url' => ['/site/about']],
+            ['label' => 'Materiais', 'url' => ['/site/materiais']],
+            ['label' => '-Produtos', 'url' => ['/produto/index']],//Apagar label
+            ['label' => '-Materiais', 'url' => ['/material/index']],//Apagar label
+            ['label' => '-Usuários', 'url' => ['/usuario/index']],//Apagar label
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'

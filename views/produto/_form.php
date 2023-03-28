@@ -24,6 +24,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'imagem')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'linkShopee')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'linkAmazon')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'linkMercadoLivre')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'id_material')->textInput() ?>
 
     <div class="form-group">

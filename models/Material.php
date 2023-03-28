@@ -11,6 +11,8 @@ use Yii;
  * @property string $tipo
  * @property float $valor
  * @property string $especificacoes
+ * @property string $descricao
+ * @property string $imagem
  *
  * @property Produto[] $produtos
  */
@@ -30,10 +32,10 @@ class Material extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tipo', 'valor', 'especificacoes'], 'required'],
+            [['tipo', 'valor', 'especificacoes', 'descricao', 'imagem'], 'required'],
             [['valor'], 'number'],
-            [['especificacoes'], 'string'],
-            [['tipo'], 'string', 'max' => 255],
+            [['especificacoes', 'descricao'], 'string'],
+            [['tipo', 'imagem'], 'string', 'max' => 255],
         ];
     }
 
@@ -47,6 +49,8 @@ class Material extends \yii\db\ActiveRecord
             'tipo' => 'Tipo',
             'valor' => 'Valor',
             'especificacoes' => 'Especificacoes',
+            'descricao' => 'Descricao',
+            'imagem' => 'Imagem',
         ];
     }
 
