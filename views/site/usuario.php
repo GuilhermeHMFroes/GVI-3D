@@ -56,7 +56,7 @@ $this->title = 'GVI-3D - Usuário';
             <p style="text-align: center;">Para encerrar a seção clique no botão abaixo:</p>
 
             <div>
-                <?= Html::a('Materiais', ['/material/index'], ['class' => 'btn btn-danger']) ?>
+                <?= Html::a('Encerrar Seção', ['/site/logout'], ['class' => 'btn btn-danger'] ) ?>
             </div>
 
         </div>
