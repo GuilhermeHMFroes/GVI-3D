@@ -22,7 +22,7 @@ $this->title = 'GVI-3D - Orçamento';
         <ul>
             <li>
                 Caso não haja a peça que você queria queira na nossa loja, você deve enviar o link onde tem esse projeto, pode ser 
-                do youtube ou de sites como o thingverse que disponilizam os modelos 3D. Obs.: Os modelos 3D pagos terão acrécimo no valor da compra;
+                do youtube ou de sites como o thingverse que disponilizam os modelos 3D. Obs.: Os modelos 3D pagos terão acréscimo no valor da compra;
             </li>
             <li>
                 Se você desejar alterar algumas características de algum objeto que vendemos na nossa loja, como o material por exemplo;
@@ -32,7 +32,7 @@ $this->title = 'GVI-3D - Orçamento';
             </li>
         </ul>
 
-        <p>Link para o formulário: <a href="https://www.google.com" target="_blank">Clique aqui!</a></p>
+        <p>Link para o formulário: <a href="https://forms.gle/khpPkEKbBAmcdYL7A" target="_blank">Clique aqui!</a></p>
 
     </div>
     

@@ -41,6 +41,24 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             text-align: center;
         }
 
+        .userIcon{
+            position: absolute;
+            right: 50px;
+            height: 30px;
+        }
+
+        .listaConjunto {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .listaElemento {
+            margin: 0 10px;
+        }
+
     </style>
 
 </head>
@@ -56,7 +74,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
+        'options' => ['class' => 'navbar-nav'], // adicionando a classe ml-auto
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'Orçamento', 'url' => ['/site/orcamento']],
@@ -65,18 +83,24 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => '-Produtos', 'url' => ['/produto/index']],//Apagar label
             ['label' => '-Materiais', 'url' => ['/material/index']],//Apagar label
             ['label' => '-Usuários', 'url' => ['/usuario/index']],//Apagar label
+
+            //['label' => 'Login', 'url' => ['/site/login']]
+            //. Html::submitButton('Logout (' . Yii::$app->user->identity->username . ')', ['class' => 'nav-link btn btn-link logout'])
+
             Yii::$app->user->isGuest
-                ? ['label' => 'Login', 'url' => ['/site/login']]
-                : '<li class="nav-item">'
-                    . Html::beginForm(['/site/logout'])
-                    . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->username . ')',
-                        ['class' => 'nav-link btn btn-link logout']
-                    )
-                    . Html::endForm()
-                    . '</li>'
-        ]
-    ]);
+            ? Html::a(
+                '<img class="userIcon" title="Login" src="' . Yii::$app->request->baseUrl . '/icons/user.png" alt="Login">', 
+                ['/site/login'])
+            : '<li class="nav-item">'
+                . Html::beginForm(['/site/logout'])
+                . Html::submitButton(
+                    '<img class="userIcon" title="Logout" src="' . Yii::$app->request->baseUrl . '/icons/user.png" alt="Login">',
+                    ['class' => 'nav-link btn btn-link logout']
+                )
+                . Html::endForm()
+                . '</li>'
+    ]
+]);
     NavBar::end();
     ?>
 </header>
@@ -95,7 +119,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <div class="container">
         <div class="row text-muted">
             <div class="col-md-6 text-center text-md-start">&copy; GVI 3D - <?= date('Y') ?></div>
-            <div class="col-md-6 text-center text-md-end"><?= Yii::powered() ?></div>
         </div>
     </div>
 </footer>

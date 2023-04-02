@@ -24,7 +24,9 @@ $this->title = 'GVI-3D - Home';
             <p><?= $produto->descricao ?></p>
             <p>Valor: R$ <?= number_format($produto->valor, 2, ',', '.') ?></p>
             <p id="material">Material: <?= $produto->material->tipo ?></p>
-            <?= Html::a('Ver mais', ['site/produto', 'id' => $produto->id], ['class' => 'btn btn-primary']) ?>
+            <div style="text-align: center;">
+                <?= Html::a('Ver mais', ['site/produto', 'id' => $produto->id], ['class' => 'btn btn-primary']) ?>
+            </div>
 
         </div>
 

@@ -8,22 +8,6 @@ $this->title = 'GVI-3D - Produto';
 
 ?>
 
-<style>
-
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    li {
-        margin: 0 10px;
-    }
-
-</style>
-
 <div style="display: none">
     <div class="produto-view">
 
@@ -69,26 +53,26 @@ $this->title = 'GVI-3D - Produto';
 
             <h2>Onde Comprar</h2>
 
-            <p>Para sua segunça vendemos apenas nesses sites. Quando você clicar na imagem da plataforma você será redirecionado para uma
+            <p>Para a sua segunça vendemos apenas nesses sites. Quando você clicar na imagem da plataforma de vendas, você será redirecionado para uma
                 nova guia do produto na plataforma da sua escolha.</p>
             
-            <ul>
+            <ul class="listaConjunto">
 
-                <li>
+                <li class="listaElemento">
                     <a href="<?= $model->linkShopee ?>" target="_blank">
                         <img style="height: 120px;" src="<?= Yii::getAlias('@web/icons/shopee.svg') ?>" alt="Shopee">
                     </a>
                 </li>
 
-                <li>
+                <li class="listaElemento">
                     <a href="<?= $model->linkAmazon ?>" target="_blank">
                         <img style="height: 120px;" src="<?= Yii::getAlias('@web/icons/amazon.svg') ?>" alt="Amazon">
                     </a>
                 </li>
 
-                <li>
+                <li class="listaElemento">
                     <a href="<?= $model->linkMercadoLivre ?>" target="_blank">
-                        <img style="height: 120px;" src="<?= Yii::getAlias('@web/icons/mercado_livre.svg') ?>" alt="Mercado Livre"> 
+                           <img style="height: 120px;" src="<?= Yii::getAlias('@web/icons/mercado_livre.svg') ?>" alt="Mercado Livre"> 
                     </a>
                 </li>
 
@@ -105,7 +89,7 @@ $this->title = 'GVI-3D - Produto';
             <br>
 
             <p>Caso você deseje alterar alguma característica da peça como tamanho, material(filamento), ou qualquer outra mudança
-                por favor <a>clique aqui</a> que você vai ser redirecionada para o formulário de orçamento.</p>
+                por favor <a href="https://forms.gle/khpPkEKbBAmcdYL7A" target="_blank">clique aqui</a> que você vai ser redirecionada para o formulário de orçamento.</p>
 
         </div>
 
