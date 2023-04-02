@@ -80,6 +80,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'Orçamento', 'url' => ['/site/orcamento']],
             ['label' => 'Sobre nós', 'url' => ['/site/about']],
             ['label' => 'Materiais', 'url' => ['/site/materiais']],
+            ['label' => '-Usuário', 'url' => ['/site/usuario']],//Apagar label
             ['label' => '-Produtos', 'url' => ['/produto/index']],//Apagar label
             ['label' => '-Materiais', 'url' => ['/material/index']],//Apagar label
             ['label' => '-Usuários', 'url' => ['/usuario/index']],//Apagar label
@@ -92,9 +93,10 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 '<img class="userIcon" title="Login" src="' . Yii::$app->request->baseUrl . '/icons/user.png" alt="Login">', 
                 ['/site/login'])
             : '<li class="nav-item">'
-                . Html::beginForm(['/site/logout'])
+                . #Html::beginForm(['/site/logout'])
+                Html::beginForm(['/site/usuario'])
                 . Html::submitButton(
-                    '<img class="userIcon" title="Logout" src="' . Yii::$app->request->baseUrl . '/icons/user.png" alt="Login">',
+                    '<img class="userIcon" title="Tela Do Usuário" src="' . Yii::$app->request->baseUrl . '/icons/user.png" alt="Login">',
                     ['class' => 'nav-link btn btn-link logout']
                 )
                 . Html::endForm()
