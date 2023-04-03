@@ -17,7 +17,7 @@ $this->title = 'GVI-3D - Usuário';
 
     <h2>Painel de controle</h2><br>
 
-    <p style="text-align: center;">Seja bem vindo(a) <?= Yii::$app->user->identity->nome ?>.</p>
+    <p style="text-align: center;">Seja bem-vindo(a) <?= Yii::$app->user->identity->nome ?>.</p>
 
     <br><div class="separador"></div><br>
 
