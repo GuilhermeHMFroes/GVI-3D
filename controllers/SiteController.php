@@ -175,7 +175,45 @@ class SiteController extends Controller
 
     public function actionUsuario()
     {
-        return $this->render('usuario');
+        //Relatório 1: Listar os produtos mais usados
+        // Executa a consulta para contar os usos de cada material
+        $maisUsados = (new \yii\db\Query())
+            ->select(['material.*', 'COUNT(produto.id) AS quantidade_usos'])
+            ->from('material')
+            ->leftJoin('produto', 'material.id = produto.id_material')
+            ->groupBy('material.id')
+            ->orderBy('quantidade_usos DESC');
+
+        // Executa a consulta e armazena os resultados em um array
+        $relatorioMaisUsados = $maisUsados->all();
+
+        //Relatório 2: Listar os produtos pelo preço
+        // Executa a consulta para listar os materiais e seus preços
+        $materiaisPrecos = (new \yii\db\Query())
+            ->select(['tipo', 'valor'])
+            ->from('material')
+            ->orderBy('valor DESC');
+
+        // Executa a consulta e armazena os resultados em um array
+        $relatorioPrecoMaterial = $materiaisPrecos->all();
+
+        //Relatório 3: listar os produtos por preço
+        // Executa a consulta para listar os materiais e seus preços
+        $produtosPrecos = (new \yii\db\Query())
+            ->select(['nome', 'valor'])
+            ->from('produto')
+            ->orderBy('valor ASC');
+
+        // Executa a consulta e armazena os resultados em um array
+        $relatorioPrecosProduto = $produtosPrecos->all();
+
+        // Renderiza a view 'relatorio_mais_usados' passando os resultados
+        return $this->render('usuario', [
+            'relatorioMaisUsados' => $relatorioMaisUsados,
+            'relatorioPrecoMaterial' => $relatorioPrecoMaterial,
+            'relatorioPrecosProduto' => $relatorioPrecosProduto
+        ]);
+
     }
 
 }

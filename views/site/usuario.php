@@ -15,7 +15,9 @@ $this->title = 'GVI-3D - Usuário';
     
     <br>
 
-    <h2>Painel de controle</h2>
+    <h2>Painel de controle</h2><br>
+
+    <p style="text-align: center;">Seja bem vindo(a) <?= Yii::$app->user->identity->nome ?>.</p>
 
     <br><div class="separador"></div><br>
 
@@ -51,7 +53,101 @@ $this->title = 'GVI-3D - Usuário';
 
         <div>
 
-            <h4>Encerrar seção</h4>
+            <h4>Usuários</h4>
+
+            <p style="text-align: center;">Para poder criar, alterar ou excluir algum usuário por favor clique no botão abaixo para ser redirecionado para a página de controle dos produtos:</p>
+
+            <div>
+                <?= Html::a('Materiais', ['/usuario/index'], ['class' => 'btn btn-primary']) ?>
+            </div>
+
+        </div>
+
+        <br><div class="separador"></div><br>
+
+        <div>
+
+            <h2>Relatórios</h2><br>
+
+            <div>
+                <h4>Materiais mais utilizados</h4>
+
+                <div class="table-wrapper">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="text-left">Tipo</th>
+                            <th class="text-left">Quantidade de usos</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($relatorioMaisUsados as $resultado): ?>
+                                <tr>
+                                <td><?= $resultado['tipo'] ?></td>
+                                <td><?= $resultado['quantidade_usos'] ?></td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><br>
+
+            <div>
+                <h4>Materiais mais caros</h4>
+
+                <div class="table-wrapper">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="text-left">Tipo</th>
+                            <th class="text-left">Preço</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($relatorioPrecoMaterial as $resultado): ?>
+                                <tr>
+                                <td><?= $resultado['tipo'] ?></td>
+                                <td><?= 'R$ ' . number_format($resultado['valor'], 2, ',', '.') ?></td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><br>
+
+            <div>
+                <h4>Lista de produtos</h4>
+
+                <div class="table-wrapper">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th>Nome</th>
+                            <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($relatorioPrecosProduto as $resultado): ?>
+                            <tr>
+                                <td><?= $resultado['nome'] ?></td>
+                                <td><?= $resultado['valor'] ?></td>
+                            </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br><div class="separador"></div><br>
+
+        <div>
+
+            <h2>Encerrar seção</h2>
 
             <p style="text-align: center;">Para encerrar a seção clique no botão abaixo:</p>
 

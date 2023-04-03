@@ -41,6 +41,19 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             text-align: center;
         }
 
+        .table-wrapper {
+            text-align: center;
+        }
+
+        .table-wrapper table {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #ddd;
+        }
+
         .userIcon{
             position: absolute;
             right: 50px;
@@ -80,10 +93,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'Orçamento', 'url' => ['/site/orcamento']],
             ['label' => 'Sobre nós', 'url' => ['/site/about']],
             ['label' => 'Materiais', 'url' => ['/site/materiais']],
-            ['label' => '-Usuário', 'url' => ['/site/usuario']],//Apagar label
-            ['label' => '-Produtos', 'url' => ['/produto/index']],//Apagar label
-            ['label' => '-Materiais', 'url' => ['/material/index']],//Apagar label
-            ['label' => '-Usuários', 'url' => ['/usuario/index']],//Apagar label
 
             //['label' => 'Login', 'url' => ['/site/login']]
             //. Html::submitButton('Logout (' . Yii::$app->user->identity->username . ')', ['class' => 'nav-link btn btn-link logout'])

@@ -11,14 +11,14 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Usuarios';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="usuario-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Usuario', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Usuário', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -31,10 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'nome',
-            'endereco:ntext',
             'email:email',
             'senha',
-            //'telefone',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Usuario $model, $key, $index, $column) {
