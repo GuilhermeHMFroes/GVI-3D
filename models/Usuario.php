@@ -9,12 +9,8 @@ use Yii;
  *
  * @property int $id
  * @property string $nome
- * @property string $endereco
  * @property string|null $email
  * @property string $senha
- * @property string $telefone
- *
- * @property Vendas[] $vendas
  */
 class Usuario extends \yii\db\ActiveRecord
 {
@@ -32,9 +28,8 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'endereco', 'senha', 'telefone'], 'required'],
-            [['endereco'], 'string'],
-            [['nome', 'email', 'senha', 'telefone'], 'string', 'max' => 255],
+            [['nome', 'senha'], 'required'],
+            [['nome', 'email', 'senha'], 'string', 'max' => 255],
             [['email'], 'unique'],
         ];
     }
@@ -47,20 +42,10 @@ class Usuario extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
-            'endereco' => 'Endereco',
             'email' => 'Email',
             'senha' => 'Senha',
-            'telefone' => 'Telefone',
         ];
     }
-
-    /**
-     * Gets query for [[Vendas]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVendas()
-    {
-        return $this->hasMany(Vendas::class, ['id_usuario' => 'id']);
-    }
 }
+
+

@@ -15,10 +15,8 @@ class m230327_192252_tabela_usuario extends Migration
         $this->createTable('usuario', [
             'id' => $this->primaryKey(),
             'nome' => $this->string()->notNull(),
-            'endereco' => $this->text()->notNull(),
             'email' => $this->string()->unique(),
             'senha' => $this->string()->notNull(),
-            'telefone' => $this->string()->notNull(),
         ]);
 
         $this->alterColumn('usuario', 'id', $this->integer()->notNull()->append('AUTO_INCREMENT'));
