@@ -132,7 +132,7 @@ $this->title = 'GVI-3D - Usuário';
                             <?php foreach ($relatorioPrecosProduto as $resultado): ?>
                             <tr>
                                 <td><?= $resultado['nome'] ?></td>
-                                <td><?= $resultado['valor'] ?></td>
+                                <td><?= 'R$ ' . number_format ($resultado['valor'], 2, ',', '.') ?></td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>

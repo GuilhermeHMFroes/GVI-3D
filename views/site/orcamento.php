@@ -15,8 +15,8 @@ $this->title = 'GVI-3D - Orçamento';
 
     <div>
     
-        <p>Para podermos atender você de maneira mais eficiente o formulário para solicitar um orçamento se encontra no 
-            link abaixo onde vc será redirecionaod me uma nova guia para o google forms.</p>
+        <p>Para podermos atender você de maneira mais eficiente, o formulário para solicitar um orçamento se encontra no 
+            link abaixo onde vc será redirecionado em uma nova guia para o google forms.</p>
 
         <p>O orçamento poderá ser feito para:</p>
         <ul>
